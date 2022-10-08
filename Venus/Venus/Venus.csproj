@@ -39,7 +39,7 @@
     </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>transparent.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdonisUI, Version=1.17.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -79,6 +79,8 @@
     </ApplicationDefinition>
     <Compile Include="Models\Components.cs" />
     <Compile Include="Models\JSON\Maintenance.cs" />
+    <Compile Include="Models\JSON\Resource.cs" />
+    <Compile Include="Models\JSON\Start.cs" />
     <Compile Include="Plugins\Builtin\Logger\Plug.cs" />
     <Compile Include="Threads\Invoker.cs" />
     <Compile Include="Tools\Image.cs" />
@@ -133,21 +135,13 @@
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Menu\add.png" />
-    <Resource Include="Assets\Menu\refresh.png" />
-    <Resource Include="Assets\Menu\remove.png" />
+    <Resource Include="Assets\transparent.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\background.jpg" />
+    <Resource Include="transparent.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\icon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icon.ico" />
+    <Resource Include="Assets\background\background_0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
