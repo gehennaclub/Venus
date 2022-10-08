@@ -147,19 +147,18 @@ namespace Venus.ViewModels
 
         private void RenderResource<T>(dynamic content, StackPanel panel)
         {
-            TextBlock block = null;
-            Separator separator = null;
-
             foreach (var resource in content)
             {
-                block = new TextBlock();
-                separator = new Separator();
-                separator.Background = new BrushConverter().ConvertFromString("#4C4F62") as Brush;
-                block.TextWrapping = TextWrapping.Wrap;
-                block.FontFamily = new FontFamily("Consolas");
-                block.Inlines.Add(new Run($"file name: {resource.file_name}\nversion:   {resource.version}\nhash:      {resource.hash}"));
-                panel.Children.Add(block);
-                panel.Children.Add(separator);
+                panel.Children.Add(new TextBlock()
+                {
+                    TextWrapping = TextWrapping.Wrap,
+                    FontFamily = new FontFamily("Consolas"),
+                    Text = $"file name: {resource.file_name}\nversion:   {resource.version}\nhash:      {resource.hash}"
+                });
+                panel.Children.Add(new Separator()
+                {
+                    Background = new BrushConverter().ConvertFromString("#4C4F62") as Brush
+                });
             }
         }
 
