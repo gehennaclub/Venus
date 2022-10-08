@@ -33,44 +33,45 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Menu Grid.Column="0" Grid.Row="0">
+        <Menu Grid.Row="1">
             
         </Menu>
 
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="28*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
-            <Grid Margin="2,2,2,2" Background="{StaticResource GridToolsBackground}">
-                <Border BorderBrush="{StaticResource GridBorders}" BorderThickness="1"/>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid Grid.Column="0" Margin="2,2,2,2">
-                        <Label Content="Game maintenance:" Margin="5,0,0,0"/>
-                        <TextBlock x:Name="MaintenanceStatus" Text="Unknown" Margin="125,0,0,0" Foreground="Cyan"/>
-                    </Grid>
-                    <Grid Grid.Column="1" Margin="2,2,2,2">
-                        <Label Content="Game SID:" Margin="5,0,0,0"/>
-                        <TextBlock x:Name="SID" Text="Unknown" Margin="70,0,0,0" Foreground="Cyan"/>
-                    </Grid>
-                    <Grid Grid.Column="2" Margin="2,2,2,2">
-                        <Label Content="Game start:" Margin="5,0,0,0"/>
-                        <TextBlock x:Name="StartStatus" Text="Unknown" Margin="78,0,0,0" Foreground="Cyan"/>
-                    </Grid>
-                </Grid>
+            <Grid Grid.Row="0">
+                <Label Content="Dead Or Alive Xtreme Venus Vacation Client" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
-
 
             <Grid Grid.Row="1" Margin="2,2,2,2" Background="{StaticResource GridToolsBackground}">
                 <TabControl Background="{StaticResource GridToolsBackground}">
+                    <TabItem Header="Informations" Background="{StaticResource GridToolsBackground}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Margin="2,2,2,2">
+                                <Label Content="Game maintenance:" Margin="5,0,0,0"/>
+                                <TextBlock x:Name="MaintenanceStatus" Text="Unknown" Margin="125,0,0,0" Foreground="Cyan"/>
+                            </Grid>
+                            <Grid Grid.Column="1" Margin="2,2,2,2">
+                                <Label Content="Game SID:" Margin="5,0,0,0"/>
+                                <TextBlock x:Name="SID" Text="Unknown" Margin="70,0,0,0" Foreground="Cyan"/>
+                            </Grid>
+                            <Grid Grid.Column="2" Margin="2,2,2,2">
+                                <Label Content="Game start:" Margin="5,0,0,0"/>
+                                <TextBlock x:Name="StartStatus" Text="Unknown" Margin="78,0,0,0" Foreground="Cyan"/>
+                            </Grid>
+                        </Grid>
+                        
+                    </TabItem>
                     <TabItem Header="Resources" Background="{StaticResource GridToolsBackground}">
                         <TabControl Background="{StaticResource GridToolsBackground}">
                             <TabItem Header="Low" Background="{StaticResource GridToolsBackground}">
