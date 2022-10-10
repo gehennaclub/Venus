@@ -20,6 +20,7 @@ using AdonisUI;
 using System.Windows.Documents;
 using System.Windows.Media;
 using Brushes = System.Windows.Media.Brushes;
+using System.Reflection;
 
 namespace Venus.ViewModels
 {
@@ -27,8 +28,6 @@ namespace Venus.ViewModels
     {
         private MainWindow window { get; set; }
         private Components components { get; set; }
-        
-        private string SID { get; set; }
 
         public MainViewModel(MainWindow window, string name) : base(window, name)
         {
@@ -51,9 +50,19 @@ namespace Venus.ViewModels
             logger.Record(Plugins.Builtin.Logger.Plug.Type.success, "Components loaded");
         }
 
-        public async Task Load()
+        private Task VenusVersion()
         {
+            window.VersionValue.Text = $"{Assembly.GetExecutingAssembly().GetName().Version}";
+
+            return (Task.CompletedTask);
+        }
+
+        private async Task Load()
+        {
+            await VenusVersion();
             await api.FirstPass();
+
+            logger.Record(Plugins.Builtin.Logger.Plug.Type.normal, Resources.Logs.Client.allLoaded);
         }
 
         public async Task EventLoad()

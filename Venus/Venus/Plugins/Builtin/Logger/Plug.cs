@@ -69,6 +69,7 @@ namespace Venus.Plugins.Builtin.Logger
             block.Inlines.Add(message);
 
             window.Log.Children.Add(block);
+            window.LogsFooter.Text = $"{message}";
 
             return (Task.CompletedTask);
         }

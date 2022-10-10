@@ -4,6 +4,7 @@
     <Brush x:Key="GridMainBackground">#21252B</Brush>
     <Brush x:Key="GridToolsBackground">#282C34</Brush>
     <Brush x:Key="GridBorders">#4C4F62</Brush>
+    <Brush x:Key="FontColor">#569CD6</Brush>
     <Grid x:Key="Component" Background="{StaticResource GridToolsBackground}" Margin="2,2,2,2">
         <Border BorderBrush="{StaticResource GridBorders}" BorderThickness="2"/>
     </Grid>
