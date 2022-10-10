@@ -69,7 +69,7 @@
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Label Content="Venus" HorizontalAlignment="Center" FontSize="20"/>
                                 <Label Content="Venus is a Dead Or Alive Xtreme Venus Vacation Client for what normal humans can't see" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Normal"/>
-                                <Label Content="The goal is to simplify the modding and game cheating using third paty software" HorizontalAlignment="Center" FontWeight="Normal"/>
+                                <Label Content="The goal is to simplify the modding and game cheating using third party software" HorizontalAlignment="Center" FontWeight="Normal"/>
                                 <Label Content="Venus client is currently in pre release version" HorizontalAlignment="Center" FontWeight="Normal"/>
                                 <Label Content="The features and the interface will change in the future updates" HorizontalAlignment="Center" FontWeight="Normal"/>
                                 <Label Content="If you have an issue, a bug, or you just want to follow the developement status" HorizontalAlignment="Center"  FontWeight="Normal"/>
