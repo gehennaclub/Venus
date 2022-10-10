@@ -56,9 +56,11 @@ namespace Venus.Plugins.Builtin.API
         private async Task LoadMaintenance(HttpResponseMessage response)
         {
             logger.Record(Plugins.Builtin.Logger.Plug.Type.success, "Maintenance checked");
-            
+
+            logger.Record(Plugins.Builtin.Logger.Plug.Type.wait, "Setting up maintenance...");
             maintenanceRoot = JsonConvert.DeserializeObject<Models.JSON.Maintenance.Rootobject>(await response.Content.ReadAsStringAsync());
             window.MaintenanceStatus.Text = $"{maintenanceRoot.maintenance}";
+            logger.Record(Plugins.Builtin.Logger.Plug.Type.success, "Maintenance setted up");
 
             await Cookie(response.Headers);
         }
@@ -66,6 +68,7 @@ namespace Venus.Plugins.Builtin.API
         private async Task Maintenance()
         {
             logger.Record(Plugins.Builtin.Logger.Plug.Type.wait, "Checking game maintenance...");
+            
             await Contact("maintenance", LoadMaintenance, false);
         }
 
@@ -114,12 +117,14 @@ namespace Venus.Plugins.Builtin.API
         private async Task LoadResources(HttpResponseMessage response)
         {
             logger.Record(Plugins.Builtin.Logger.Plug.Type.success, "Retriving resources completed");
-            
+
+            logger.Record(Plugins.Builtin.Logger.Plug.Type.wait, "Setting up resources...");
             ResourcesRoot = JsonConvert.DeserializeObject<Models.JSON.Resource.Rootobject>(await response.Content.ReadAsStringAsync());
             RenderResource<Models.JSON.Resource.Low>(ResourcesRoot.resource_list.low, window.ResourcesListLow);
             RenderResource<Models.JSON.Resource.Common>(ResourcesRoot.resource_list.common, window.ResourcesListCommon);
             RenderResource<Models.JSON.Resource.High>(ResourcesRoot.resource_list.high, window.ResourcesListHigh);
             RenderResource<Models.JSON.Resource.Exe>(ResourcesRoot.resource_list.exe, window.ResourcesListExe);
+            logger.Record(Plugins.Builtin.Logger.Plug.Type.success, "Resources setted up");
         }
 
         private async Task Resources()

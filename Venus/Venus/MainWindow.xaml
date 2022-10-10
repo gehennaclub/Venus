@@ -41,7 +41,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="28*"/>
-                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -54,7 +53,7 @@
                 <Separator Grid.Column="0" Background="{StaticResource GridBorders}"/>
                 <StackPanel Grid.Column="1">
                     <Label Content="Dead Or Alive Xtreme Venus Vacation Client" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <Label Content="For normal humans" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="For what normal humans can't see" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Separator Grid.Column="2" Background="{StaticResource GridBorders}"/>
             </Grid>
@@ -66,34 +65,48 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Margin="2,2,2,2">
                     <TabControl Background="{StaticResource GridToolsBackground}">
-                        <TabItem Header="Informations" Background="{StaticResource GridToolsBackground}">
-                            <Grid>
-                            </Grid>
-
+                        <TabItem Header="Information">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Label Content="Venus" HorizontalAlignment="Center" FontSize="20"/>
+                                <Label Content="Venus is a Dead Or Alive Xtreme Venus Vacation Client for what normal humans can't see" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Normal"/>
+                                <Label Content="The goal is to simplify the modding and game cheating using third paty software" HorizontalAlignment="Center" FontWeight="Normal"/>
+                                <Label Content="Venus client is currently in pre release version" HorizontalAlignment="Center" FontWeight="Normal"/>
+                                <Label Content="The features and the interface will change in the future updates" HorizontalAlignment="Center" FontWeight="Normal"/>
+                                <Label Content="If you have an issue, a bug, or you just want to follow the developement status" HorizontalAlignment="Center"  FontWeight="Normal"/>
+                                <Label Content="Join the discord:" HorizontalAlignment="Center" FontWeight="Normal"/>
+                                <Label Content="https://discord.gg/RBhWszbRuU" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Normal"/>
+                                <Label Content="The project is Open Source, so don't waste your time reversing it" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Normal"/>
+                                <Label Content="Author: Neo" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Normal"/>
+                            </StackPanel>
                         </TabItem>
-                        <TabItem Header="Resources" Background="{StaticResource GridToolsBackground}">
+                        <TabItem Header="Resources">
                             <TabControl Background="{StaticResource GridToolsBackground}">
-                                <TabItem Header="Low" Background="{StaticResource GridToolsBackground}">
+                                <TabItem Header="Low">
                                     <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
                                         <StackPanel x:Name="ResourcesListLow"/>
                                     </ScrollViewer>
                                 </TabItem>
-                                <TabItem Header="Common" Background="{StaticResource GridToolsBackground}">
+                                <TabItem Header="Common">
                                     <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
                                         <StackPanel x:Name="ResourcesListCommon"/>
                                     </ScrollViewer>
                                 </TabItem>
-                                <TabItem Header="High" Background="{StaticResource GridToolsBackground}">
+                                <TabItem Header="High">
                                     <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
                                         <StackPanel x:Name="ResourcesListHigh"/>
                                     </ScrollViewer>
                                 </TabItem>
-                                <TabItem Header="Exe" Background="{StaticResource GridToolsBackground}">
+                                <TabItem Header="Exe">
                                     <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
                                         <StackPanel x:Name="ResourcesListExe"/>
                                     </ScrollViewer>
                                 </TabItem>
                             </TabControl>
+                        </TabItem>
+                        <TabItem Header="Logs">
+                            <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                                <StackPanel x:Name="Log" Margin="5,5,5,5"/>
+                            </ScrollViewer>
                         </TabItem>
                     </TabControl>
                 </Grid>
@@ -120,26 +133,17 @@
 
                             <StackPanel Grid.Row="1" Margin="5,5,5,5">
                                 <Label Content="Game maintenance:"/>
-                                <TextBlock x:Name="MaintenanceStatus" Text="Unknown" Foreground="Cyan"/>
-                                <Label Content="Game SID:"/>
-                                <TextBlock x:Name="SID" Text="Unknown" Foreground="Cyan"/>
-                                <Label Content="Game start:"/>
-                                <TextBlock x:Name="StartStatus" Text="Unknown" Foreground="Cyan"/>
+                                <TextBox x:Name="MaintenanceStatus" Text="Unknown" Foreground="Cyan"/>
+                                <Label Content="Game SID:" Margin="0,10,0,0"/>
+                                <TextBox x:Name="SID" Text="Unknown" Foreground="Cyan"/>
+                                <Label Content="Game start:" Margin="0,10,0,0"/>
+                                <TextBox x:Name="StartStatus" Text="Unknown" Foreground="Cyan"/>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </Grid>
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="Transparent" Width="5"/>
             </Grid>
-
-            <Grid Grid.Row="2" Background="{StaticResource GridToolsBackground}" Margin="2,2,2,2">
-                <Border BorderBrush="{StaticResource GridBorders}" BorderThickness="1"/>
-                <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-                    <StackPanel x:Name="Log" Margin="5,5,5,5"/>
-                </ScrollViewer>
-            </Grid>
-
-            <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Transparent" Height="5"/>
         </Grid>
     </Grid>
 </adonisControls:AdonisWindow>
