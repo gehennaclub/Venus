@@ -11,11 +11,9 @@ namespace Venus.Models
     {
         public Ookii.Dialogs.Wpf.VistaFolderBrowserDialog folderDialog { get; set; }
         public Ookii.Dialogs.Wpf.VistaOpenFileDialog fileDialog { get; set; }
-        public HttpClient httpClient { get; set; }
 
         public Components()
         {
-            httpClient = new HttpClient();
             folderDialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog()
             {
                 Multiselect = true

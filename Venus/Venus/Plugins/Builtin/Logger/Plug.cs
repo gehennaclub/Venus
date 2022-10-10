@@ -13,7 +13,6 @@ namespace Venus.Plugins.Builtin.Logger
 {
     public class Plug : Plugin
     {
-        private MainWindow window { get; set; }
         private int limit { get; set; }
         private List<string> logs { get; set; }
         private string session { get; set; }

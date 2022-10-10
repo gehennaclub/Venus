@@ -81,6 +81,7 @@
     <Compile Include="Models\JSON\Maintenance.cs" />
     <Compile Include="Models\JSON\Resource.cs" />
     <Compile Include="Models\JSON\Start.cs" />
+    <Compile Include="Plugins\Builtin\API\Plug.cs" />
     <Compile Include="Plugins\Builtin\Logger\Plug.cs" />
     <Compile Include="Threads\Invoker.cs" />
     <Compile Include="Tools\Image.cs" />

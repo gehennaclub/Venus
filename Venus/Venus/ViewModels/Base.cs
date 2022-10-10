@@ -12,6 +12,7 @@ namespace Venus.ViewModels
         public List<Func<Task>> queue { get; set; }
         public Dictionary<object, Func<Task>> actions { get; set; }
         public Plugins.Builtin.Logger.Plug logger { get; set; }
+        public Plugins.Builtin.API.Plug api { get; set; }
         public Ookii.Dialogs.Wpf.VistaFolderBrowserDialog folderDialog { get; set; }
         public Ookii.Dialogs.Wpf.VistaOpenFileDialog fileDialog { get; set; }
         public string name { get; set; }
@@ -23,6 +24,7 @@ namespace Venus.ViewModels
             queue = new List<Func<Task>>();
             actions = new Dictionary<object, Func<Task>>();
             logger = new Plugins.Builtin.Logger.Plug(this.mainWindow, name);
+            api = new Plugins.Builtin.API.Plug(this.mainWindow, name);
             folderDialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
             fileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog();
         }
