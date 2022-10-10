@@ -45,58 +45,91 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-                <Label Content="Dead Or Alive Xtreme Venus Vacation Client" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Separator Grid.Column="0" Background="{StaticResource GridBorders}"/>
+                <StackPanel Grid.Column="1">
+                    <Label Content="Dead Or Alive Xtreme Venus Vacation Client" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="For normal humans" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator Grid.Column="2" Background="{StaticResource GridBorders}"/>
             </Grid>
 
             <Grid Grid.Row="1" Margin="2,2,2,2" Background="{StaticResource GridToolsBackground}">
-                <TabControl Background="{StaticResource GridToolsBackground}">
-                    <TabItem Header="Informations" Background="{StaticResource GridToolsBackground}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*" MinWidth="269"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Margin="2,2,2,2">
+                    <TabControl Background="{StaticResource GridToolsBackground}">
+                        <TabItem Header="Informations" Background="{StaticResource GridToolsBackground}">
+                            <Grid>
+                            </Grid>
+
+                        </TabItem>
+                        <TabItem Header="Resources" Background="{StaticResource GridToolsBackground}">
+                            <TabControl Background="{StaticResource GridToolsBackground}">
+                                <TabItem Header="Low" Background="{StaticResource GridToolsBackground}">
+                                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel x:Name="ResourcesListLow"/>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="Common" Background="{StaticResource GridToolsBackground}">
+                                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel x:Name="ResourcesListCommon"/>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="High" Background="{StaticResource GridToolsBackground}">
+                                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel x:Name="ResourcesListHigh"/>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="Exe" Background="{StaticResource GridToolsBackground}">
+                                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel x:Name="ResourcesListExe"/>
+                                    </ScrollViewer>
+                                </TabItem>
+                            </TabControl>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="2,2,2,2">
+                    <Border BorderBrush="{StaticResource GridBorders}" BorderThickness="1">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0" Margin="2,2,2,2">
-                                <Label Content="Game maintenance:" Margin="5,0,0,0"/>
-                                <TextBlock x:Name="MaintenanceStatus" Text="Unknown" Margin="125,0,0,0" Foreground="Cyan"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Separator Grid.Column="0" Background="{StaticResource GridBorders}"/>
+                                <Label Grid.Column="1" Content="Game Informations" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Separator Grid.Column="2" Background="{StaticResource GridBorders}"/>
                             </Grid>
-                            <Grid Grid.Column="1" Margin="2,2,2,2">
-                                <Label Content="Game SID:" Margin="5,0,0,0"/>
-                                <TextBlock x:Name="SID" Text="Unknown" Margin="70,0,0,0" Foreground="Cyan"/>
-                            </Grid>
-                            <Grid Grid.Column="2" Margin="2,2,2,2">
-                                <Label Content="Game start:" Margin="5,0,0,0"/>
-                                <TextBlock x:Name="StartStatus" Text="Unknown" Margin="78,0,0,0" Foreground="Cyan"/>
-                            </Grid>
+
+                            <StackPanel Grid.Row="1" Margin="5,5,5,5">
+                                <Label Content="Game maintenance:"/>
+                                <TextBlock x:Name="MaintenanceStatus" Text="Unknown" Foreground="Cyan"/>
+                                <Label Content="Game SID:"/>
+                                <TextBlock x:Name="SID" Text="Unknown" Foreground="Cyan"/>
+                                <Label Content="Game start:"/>
+                                <TextBlock x:Name="StartStatus" Text="Unknown" Foreground="Cyan"/>
+                            </StackPanel>
                         </Grid>
-                        
-                    </TabItem>
-                    <TabItem Header="Resources" Background="{StaticResource GridToolsBackground}">
-                        <TabControl Background="{StaticResource GridToolsBackground}">
-                            <TabItem Header="Low" Background="{StaticResource GridToolsBackground}">
-                                <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-                                    <StackPanel x:Name="ResourcesListLow"/>
-                                </ScrollViewer>
-                            </TabItem>
-                            <TabItem Header="Common" Background="{StaticResource GridToolsBackground}">
-                                <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-                                    <StackPanel x:Name="ResourcesListCommon"/>
-                                </ScrollViewer>
-                            </TabItem>
-                            <TabItem Header="High" Background="{StaticResource GridToolsBackground}">
-                                <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-                                    <StackPanel x:Name="ResourcesListHigh"/>
-                                </ScrollViewer>
-                            </TabItem>
-                            <TabItem Header="Exe" Background="{StaticResource GridToolsBackground}">
-                                <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-                                    <StackPanel x:Name="ResourcesListExe"/>
-                                </ScrollViewer>
-                            </TabItem>
-                        </TabControl>
-                    </TabItem>
-                </TabControl>
+                    </Border>
+                </Grid>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="Transparent" Width="5"/>
             </Grid>
 
             <Grid Grid.Row="2" Background="{StaticResource GridToolsBackground}" Margin="2,2,2,2">

@@ -99,6 +99,7 @@ namespace Venus.Plugins.Builtin.API
         private async Task LoadStart(HttpResponseMessage response)
         {
             logger.Record(Plugins.Builtin.Logger.Plug.Type.success, "Game started");
+            
             startRoot = JsonConvert.DeserializeObject<Models.JSON.Start.Rootobject>(await response.Content.ReadAsStringAsync());
             window.StartStatus.Text = $"{startRoot.gamestart}";
         }
